@@ -1,0 +1,24 @@
+pipeline {
+  agent docker
+  stages {
+    stage('update') {
+      steps {
+        echo "Updating package"
+        sh 'sudo apt update'
+      }
+    }
+    stage('Installing') {
+      steps {
+        echo "Installing Node js"
+        sh 'sudo apt install nodejs'
+      }
+    }
+    stage('Verifying') {
+        steps {
+            echo "Verifying nodejs installation"
+            sh 'node -v'
+        }
+
+    }
+  }
+}
