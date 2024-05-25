@@ -10,14 +10,13 @@ pipeline {
     stage('install and update package') {
       steps {
         echo "Installing and Updating package"
-        sh 'apt-get'
-        sh 'apt update'
+        sh 'sudo apt update'
       }
     }
     stage('Installing') {
       steps {
         echo "Installing Node js"
-        sh ' apt install nodejs'
+        sh ' sudo apt install nodejs'
       }
     }
     stage('Verifying') {
