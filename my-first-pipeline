@@ -1,6 +1,8 @@
 pipeline {
-  agent docker
   stages {
+    agent {
+    docker { image 'node:16-alpine' }
+    }
     stage('update') {
       steps {
         echo "Updating package"
