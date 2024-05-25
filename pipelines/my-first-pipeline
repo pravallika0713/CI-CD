@@ -3,9 +3,10 @@ pipeline {
     docker { image 'node:16-alpine' }
     }
   stages {
-    stage('update') {
+    stage('install and update package') {
       steps {
-        echo "Updating package"
+        echo "Installing and Updating package"
+        sh 'apt-get'
         sh 'apt update'
       }
     }
